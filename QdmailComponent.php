@@ -1183,6 +1183,7 @@ class QdmailBase extends QdmailBranch{
 			$this->is_qmail = true;
 		}
 		$sendmail_path = ini_get('sendmail_path');
+		/* http://blog.cheki.net/archives/1587
 		if(false !== @system($sendmail_path.' -d0.1 < /dev/null > /dev/null',$ret)){
 			if(is_array($ret)){
 				$ret = reset($ret);
@@ -1192,6 +1193,7 @@ class QdmailBase extends QdmailBranch{
 				$this->is_qmail = true;
 			}
 		}
+		*/
 
 		return $this->is_qmail ;
 	}
