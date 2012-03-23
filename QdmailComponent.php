@@ -104,7 +104,7 @@ class QdmailBase extends QdmailBranch{
 	//----------------------------
 	// Line Feed Character & kana
 	//----------------------------
-	var	$LFC				=  "\r\n";// Notice: CRLF ,If you failed, change to "\n"
+	var	$LFC				=  "\n";// Notice: CRLF ,If you failed, change to "\n"
 	var $LFC_Qmail			=  null;
 	var $is_qmail			=  null;
 	var $language			= 'ja';
