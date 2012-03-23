@@ -3741,11 +3741,18 @@ class QdmailComponent extends QdmailUserFunc{
 	var $view		= null;
 
 	function QdmailComponent( $param = null ){
+		$param = null;
+		/*
 		if( !is_null($param)){
 			$param = func_get_args();
 		}
+		*/
 		parent::__construct( $param );
 	}
+
+	function initialize(){}
+	function beforeRender(){}
+	function shutdown(){}
 
 	function startup(&$controller) {
 		$this->Controller =& $controller;
@@ -3820,7 +3827,7 @@ class QdmailComponent extends QdmailUserFunc{
 		$view = & new $this->Controller->view( $this->Controller , false );
 		$view->layout = $this->layout;
 		$mess = null;
-		$content = $view->element( $this->view_dir . DS . $type . DS . $this->template , array('content' => $content ) , true );
+		$content = $view->element( '../' . $this->view_dir . DS . $type . DS . $this->template , array('content' => $content ) , true );
 		if( 1.2 > (float) substr(Configure::version(),0,3) ){
 			$view->subDir = $this->layout_dir . DS . $type . DS ;
 		}else{
